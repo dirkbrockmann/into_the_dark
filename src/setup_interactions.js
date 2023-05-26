@@ -31,7 +31,10 @@ export default (display,controls,config) => {
 	ct.reset.update(()=>resetparameters(controls))	// one button gets the resetparameters() method defined in resetparameters.js
 	ct.go.update(()=>startstop(display,config)) // one button gets the startstop function defined above
 	ct.setup.update(()=>initialize(display,config)) // this once gets the initialize() method defined in simulation.js
-	param.number_of_particles.widget.update(()=>initialize(display,config)) // here we say that if a specific parameter is changed, in this case the number of particles, we also re_initialize the system (model and visuals)
+	param.dark_zones.widget.update(()=>{
+		display.selectAll(".hideout").transition(1000).style("opacity",param.dark_zones.widget.value()?1:0)
+	})
+//	param.number_of_particles.widget.update(()=>initialize(display,config)) // here we say that if a specific parameter is changed, in this case the number of particles, we also re_initialize the system (model and visuals)
 	
 }
 

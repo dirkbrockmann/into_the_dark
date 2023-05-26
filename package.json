@@ -1,11 +1,11 @@
 {
-  "name": "@explorables/explorable_template",
-  "title": "Explorable Template",
+  "name": "@explorables/into_the_dark",
+  "title": "Into the Dark",
   "version": "1.0.1",
-  "description": "This is a template for making a complexity explorable. The template can be used to create a new complexity explorable. This template implements the Vicsek Model.",
+  "description": "Collective intelligence - A model for a school of fish that collectively seeks a hideout",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dirkbrockmann/explorable_template.git"
+    "url": "git+https://github.com/dirkbrockmann/into_the_dark.git"
   },
   "author": "Dirk Brockmann (https://rocs.hu-berlin.de)",
   "main": "./dist/index.js",

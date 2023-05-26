@@ -7,7 +7,9 @@
 
 import * as d3 from "d3"
 import param from "./parameters.js"
-import {agents} from "./model.js"
+import {agents,hideouts} from "./model.js"
+import cfg from "./config.js"
+import {tadpole,dist} from "./utils.js"
 
 const L = param.L;
 const X = d3.scaleLinear().domain([0,L]);
@@ -25,18 +27,24 @@ const initialize = (display,config) => {
 	X.range([0,W]);
 	Y.range([0,H]);
 		
-	display.selectAll("#origin").remove();
-	display.selectAll(".node").remove();
-	
+	display.select("#origin").remove()
+		
 	const origin = display.append("g").attr("id","origin")
 	
-	origin.selectAll(".node").data(agents).enter().append("circle")
-		.attr("class","node")
+	origin.selectAll(".hideout").data(hideouts).enter().append("circle")
+		.attr("class","hideout")
+		.attr("r",function(d){return X(d.r)})
 		.attr("cx",d=>X(d.x))
 		.attr("cy",d=>Y(d.y))
-		.attr("r",X(param.agentsize/2))
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
+		.style("fill",cfg.simulation.hideout_color)
+		.style("opacity",param.dark_zones.widget.value()?1:0)
 	
+	const agent = origin.selectAll(".agent").data(agents).enter().append("g")
+		.attr("class","agent")
+		.attr("transform",d => "translate("+X(d.x)+","+Y(d.y)+")rotate("+(d.theta)+")")
+	
+	agent.append("path").attr("d",tadpole(param.agentsize))
+		
 };
 
 // the go function, this is bundled in simulation.js with the go function of
@@ -46,11 +54,13 @@ const initialize = (display,config) => {
 
 const go = (display,config) => {
 	
-	display.selectAll(".node")
+	display.selectAll(".hideout")
 		.attr("cx",d=>X(d.x))
 		.attr("cy",d=>Y(d.y))
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
+
 	
+	display.selectAll(".agent")
+		.attr("transform",d => "translate("+X(d.x)+","+Y(d.y)+")rotate("+(d.theta)+")")
 }
 
 // the update function is usually not required for running the explorable. Sometimes
@@ -58,9 +68,6 @@ const go = (display,config) => {
 // e.g. a radio button is pressed, when the system is not running, e.g. when it is paused.
 
 const update = (display,config) => {
-	
-	display.selectAll(".node")
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
 	
 }
 
