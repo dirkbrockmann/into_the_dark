@@ -2,6 +2,7 @@
   "name": "@explorables/into_the_dark",
   "title": "Into the Dark",
   "version": "1.0.1",
+  "license": "CC-BY-4.0",
   "description": "Collective intelligence - A model for a school of fish that collectively seeks a hideout",
   "repository": {
     "type": "git",
