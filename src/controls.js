@@ -40,6 +40,7 @@ const sliders = map(va,
 					.girth(cfg.widgets.slider_girth)	
 					.knob(cfg.widgets.slider_knob)
 					.size(cfg.widgets.slider_size)
+					.fontsize(cfg.widgets.slider_fontsize)
 		);
 
 // making the toggle widgets objects, based on the switches
@@ -49,6 +50,7 @@ const toggles = map(bo,
 					.id(v.id).
 					label(v.label).
 					labelposition(cfg.widgets.toggle_label_pos).
+					fontsize(cfg.widgets.toggle_fontsize).
 					value(v.default)					
 		);
 
