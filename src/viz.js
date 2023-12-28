@@ -10,6 +10,7 @@ import param from "./parameters.js"
 import {agents,hideouts} from "./model.js"
 import cfg from "./config.js"
 import {tadpole,dist} from "./utils.js"
+import styles from "./styles.module.css"
 
 const L = param.L;
 const X = d3.scaleLinear().domain([0,L]);
@@ -39,8 +40,8 @@ const initialize = (display,config) => {
 		.style("fill",cfg.simulation.hideout_color)
 		.style("opacity",param.dark_zones.widget.value()?1:0)
 	
-	const agent = origin.selectAll(".agent").data(agents).enter().append("g")
-		.attr("class","agent")
+	const agent = origin.selectAll("."+styles.agent).data(agents).enter().append("g")
+		.attr("class",styles.agent)
 		.attr("transform",d => "translate("+X(d.x)+","+Y(d.y)+")rotate("+(d.theta)+")")
 	
 	agent.append("path").attr("d",tadpole(param.agentsize))
@@ -59,7 +60,7 @@ const go = (display,config) => {
 		.attr("cy",d=>Y(d.y))
 
 	
-	display.selectAll(".agent")
+	display.selectAll("."+styles.agent)
 		.attr("transform",d => "translate("+X(d.x)+","+Y(d.y)+")rotate("+(d.theta)+")")
 }
 
