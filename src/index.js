@@ -1,5 +1,3 @@
-// this is the main file for the explorable that get's executed when the exporable is loaded
-
 import 'tachyons/css/tachyons.min.css'
 import cfg from "./container_config.js" // imports default classes and styles and parameters for the container
 import setup_container from "./setup_container.js"
@@ -15,8 +13,6 @@ var display,controls,grid;
 
 const load = function (container_id,config=cfg) {
 	
-// setting up the container
-	
 	const container = setup_container(container_id,config);
 
 	display = container.display;
@@ -25,10 +21,8 @@ const load = function (container_id,config=cfg) {
 		
 
 	
-	setup_controls(controls,grid); 
-	
+	setup_controls(controls,grid); 	
 	setup_interactions(display,controls,config); 
-	
 	setup_simulation(display,config)
 	
 }
