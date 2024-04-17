@@ -20,29 +20,37 @@ export default {
 	
 		speed_in_the_light: {
 			range:[0.1,1],
-			default:0.5
+			default:0.5,
+			label:"Geschwindigkeit im Hellen"
 		},
 		speed_in_the_dark: {
 			range:[0.05,0.5],
-			default:0.1
+			default:0.1,
+						label:"Geschwindigkeit im Dunkeln"
 		},
 		alignment_radius: {
 			range:[0,5],
-			default:2
+			default:2,
+			label:"Ausrichtungsradius"
 		},
 		attraction_radius: {
 			range:[0,15],
-			default:10
+			default:10,
+						label:"Anziehungsradius"
 		},
 		wiggle: {
 			range:[0,30],
-			default:10
+			default:10,
+						label:"Gewackel"
+			
 		},
 		collective_behavior: {
-			default: true
+			default: true,
+			label:"Kollektives Verhalten?"
 		},
 		dark_zones: {
-			default: true
+			default: true,
+			label: "Schatten?"
 		}
 		
 }

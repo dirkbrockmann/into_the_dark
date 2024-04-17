@@ -1,5 +1,6 @@
 export default {
-  "title": "Into the Dark",
-  "subtitle" : "Collective intelligence",
-  "description": "This explorable illustrates the emergence of collective intelligence in a model for a school of fish. The combination of speed differences in the light and the dark and cohesive swarm forces helps the swarm find the safe regions."
+  "title": "Ab in den Schatten",
+  "subtitle": "Ein Beispiel für kolletive Intelligenz",
+  "description": "Das Explorable zeigt die Entstehung kollektiver Intelligenz in einem Fischschwarmmodell. Der Schwarm findet als Kollektiv schützende Regionen (Schatten) effektiver als Einzeltiere nur dadurch, dass jedes Individuum schneller in hellen Regionen schwimmt.",
+ 
 }
