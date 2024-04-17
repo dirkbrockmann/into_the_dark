@@ -11,7 +11,7 @@ export default {
 		slider_girth: 12,
 		slider_knob: 14,
 		slider_anchor: {x:1,y:6.6},
-		toggle_anchor: {x:10,y:1.5},
+		toggle_anchor: {x:11,y:1.5},
 		toggle_label_pos:"left",
 		toggle_gap:1.5,
 		playbutton_size: 120,
