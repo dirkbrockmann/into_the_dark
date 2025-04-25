@@ -4,7 +4,7 @@
   "subtitle": "Collective intelligence",
   "description": "This explorable illustrates the emergence of collective intelligence in a model for a school of fish. The combination of speed differences in the light and the dark and cohesive swarm forces helps the swarm find the safe regions.",
   "author": "Dirk Brockmann (https://synosy.github.io)",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "release": "vite build && git add . && git commit -m 'prep release' && npm version patch -m \"release v%s\" && git push --follow-tags && npm publish --access public"
-    
   },
   "keywords": [
     "complexity",
@@ -28,9 +27,9 @@
     "visualization"
   ],
   "dependencies": {
-      "d3": "^7.8.5",
-      "d3-widgets": "^1.2.3",
-      "lodash-es": "^4.17.21"
+    "d3": "^7.8.5",
+    "d3-widgets": "^1.2.3",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "vite-plugin-css-injected-by-js": "^3.5.2",
